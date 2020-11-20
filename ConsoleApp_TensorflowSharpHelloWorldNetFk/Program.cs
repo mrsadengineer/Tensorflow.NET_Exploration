@@ -11,22 +11,7 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 {
     class Program
     {
-        public int Priority { get; set; } = 100;
-
-        /// <summary>
-        /// Example name
-        /// </summary>
-        public string Name { get; set; }
-
-        /// <summary>
-        /// True to run example
-        /// </summary>
-        public bool Enabled { get; set; } = true;
-
-        /// <summary>
-        /// Set true to import the computation graph instead of building it.
-        /// </summary>
-        public bool IsImportingGraph { get; set; } = false;
+   
 
 
       //  public ExampleConfig Config { get; set; }
@@ -34,25 +19,28 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 
         static void Main(string[] args)
         {
-            var hello = tf.constant("Hello, TensorFlow!");
-            Console.WriteLine(hello);
-            Console.WriteLine("test here");
-            Console.ReadKey();
 
 
-            //bool didRun = Run();
-            // Console.WriteLine("write here");
-            // Console.ReadKey();
+            //LearnExamples.CreateTensors();
+
+         //  bool didRun = Run();
+
+
+
+           Console.WriteLine("End Here");
+   
 
         }
 
 
-      //  public ExampleConfig InitConfig()
-      //  => Config = new ExampleConfig
-      //  {
-     //       Name = "Hello World",
-     //       Priority = 1
-       // };
+        public void runHelloWorld()
+        {
+   var hello = tf.constant("Hello, TensorFlow!");
+            Console.WriteLine(hello);
+            Console.WriteLine("test here");
+            Console.ReadKey();
+
+        }
 
         public static bool Run()
         {
@@ -73,3 +61,28 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
         }
     }
 }
+
+      //  public ExampleConfig InitConfig()
+      //  => Config = new ExampleConfig
+      //  {
+     //       Name = "Hello World",
+     //       Priority = 1
+       // };
+////config 
+
+//public int Priority { get; set; } = 100;
+
+///// <summary>
+///// Example name
+///// </summary>
+//public string Name { get; set; }
+
+///// <summary>
+///// True to run example
+///// </summary>
+//public bool Enabled { get; set; } = true;
+
+///// <summary>
+///// Set true to import the computation graph instead of building it.
+///// </summary>
+//public bool IsImportingGraph { get; set; } = false;
