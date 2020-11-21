@@ -9,10 +9,116 @@ using System.Threading.Tasks;
 using Tensorflow;
 using NumSharp;
 using static Tensorflow.Binding;
+
+using Tensorflow.Graphs;
 namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 {
     class LearnExamples
     {
+
+
+        
+        //chapter 6 - session
+        public static void CreateSession()
+        {
+            //tf_with<Graph>(tf.Graph().as_default(), graph =>
+            //{
+            //    var variable = tf.Variable(31, name: "tree");
+            //    tf.global_variables_initializer();
+            //    variable.assign(12);
+            //});
+
+
+            //tf_with<Graph>(tf.Graph().as_default(), graph =>
+            //{
+            //    var variable = tf.Variable(31, name: "tree");
+            //    var init = tf.global_variables_initializer();
+
+            //    var sess = tf.Session(graph);
+            //    sess.run(init);
+
+            //    var result = sess.run(variable); // 31
+
+            //    var assign = variable.assign(12);
+            //    result = sess.run(assign); // 12
+            //});
+
+        }
+
+        //chapter 3 - Variables
+
+        public static void CreateVariable()
+        {
+            var x = tf.Variable(10, name: "x");
+
+
+            using (var session = tf.Session())
+            {
+
+                
+              session.run(x.initializer);
+             //   var result = session.run(x);
+             //   Console.Write(result.ToString()); // should be 10
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+     //
+     //chapter 2;
+        //Initialize a scalar constant:
+        public static void CreateConstants()
+        {
+
+            var c1 = tf.constant(3); // int
+            var c2 = tf.constant(1.0f); // float
+            var c3 = tf.constant(2.0); // double
+            var c4 = tf.constant("Big Tree"); // string
+
+
+            Console.WriteLine($"\n\n" +
+                $"c1: {c1}\n\n" +
+                $"c2 : {c2}\n\n"  +
+                $"c3 : {c3}\n\n"  +
+                $"c4 : {c4}\n\n" );
+
+
+
+
+            // dtype=int, shape=(2, 3)
+            var nd = np.array(new int[,]
+            {
+        {1, 2, 3},
+        {4, 5, 6}
+            });
+            var tensor = tf.constant(nd);
+
+            Console.WriteLine($"\nnd: \n {nd}");
+
+
+            Console.WriteLine($"\n\n nd: {tensor}");
+
+
+ //other constant 
+        //tf.zeros
+        //tf.zeros_like
+        //tf.ones
+        //tf.ones_like
+        //tf.fill
+          //  Console.WriteLine($"\n\n" +
+             //   $"{tf.zeros}");
+        }
+
+
+
+
 
 
         public static void CreateTensors() {
@@ -31,33 +137,8 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
         }
 
 
-        //
-
-
-        public static void CreateConstants()
-        {
-
-            var c1 = tf.constant(3); // int
-            var c2 = tf.constant(1.0f); // float
-            var c3 = tf.constant(2.0); // double
-            var c4 = tf.constant("Big Tree"); // string
-
-
-
-
-            // dtype=int, shape=(2, 3)
-            var nd = np.array(new int[,]
-            {
-        {1, 2, 3},
-        {4, 5, 6}
-            });
-            var tensor = tf.constant(nd);
-        }
-        //tf.zeros
-        //tf.zeros_like
-        //tf.ones
-        //tf.ones_like
-        //tf.fill
+   
+       
 
     }
 }

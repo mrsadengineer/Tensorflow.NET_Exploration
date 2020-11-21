@@ -22,8 +22,11 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 
 
             //LearnExamples.CreateTensors();
+            //  LearnExamples.CreateConstants();
 
-         //  bool didRun = Run();
+            LearnExamples.CreateVariable();
+            //  bool didRun = Run();
+
 
 
 
