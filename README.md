@@ -4,6 +4,7 @@ Introduction - the project's aim
 Testing out Tensorflow.NET.  
 
 https://github.com/SciSharp/TensorFlow.NET 
+https://github.com/SciSharp/SciSharp-Stack-Examples
 
 ## Technologies
 Project is created with:
