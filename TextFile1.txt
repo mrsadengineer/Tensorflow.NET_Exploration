@@ -1,0 +1,15 @@
+#Import libraries 
+import tensorflow as tf
+import numpy as np
+from tensorflow import keras
+#create a model
+model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])])
+# configure your model settings
+model.compile(optimizer=’sgd’, loss=’mean_squared_error’)
+#provide the input data and the outputs labels for the supervised MLP model
+X = np.array([-2.0,  0.0, 2.0, 4.0, 6.0, 8.0], dtype=float)
+Y = np.array([-6.0, -2.0, 2.0, 6.0, 10.0, 14.0], dtype=float)
+# this is a regression model, by fitting here we let the model learn relationships between inputs and outputs values
+model.fit(X, Y, epochs=500)
+#for a particular input x, get the predicted y as the output e.g. if x= 100, print predicted y:
+print(model.predict([100.0]))

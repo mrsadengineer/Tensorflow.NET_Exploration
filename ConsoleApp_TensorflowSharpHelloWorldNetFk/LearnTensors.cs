@@ -15,8 +15,19 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 {
     class LearnExamples
     {
+        //chapter 17: convolution neural network
+        //chapter 16: neural network
+        //chapter 15: image recognition
+        //chapter 14: nearest neighbor
+        //chapter 13: Logisitic Regression
+        //chapter 12: Linear regression
+        //chapter 11: eager mode
+        //chapter 10: trainer
 
+        //chapter 9: Gradient
+        //chapter 8: Queue
 
+        //chapter 7: Operations
         
         //chapter 6 - session
         public static void CreateSession()
@@ -43,9 +54,44 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
             //    result = sess.run(assign); // 12
             //});
 
-        }
+            // Initialize the variables (i.e. assign their default value)
+            var init = tf.global_variables_initializer();
+          
+            // var sess = tf.Session();
 
-        //chapter 3 - Variables
+            var a = 2;
+            var b = 3;
+
+            var c = tf.add(a, b,"add");
+            // print(sess.run(c));
+            //var graph = tf.Graph().as_default();
+            using (var sess = tf.Session())
+            {
+                //sess.run(init);
+
+                //print(c.op);
+
+                print(tf.add(2, 5));
+
+
+                //   sess.__init__();
+             // sess.run(c.op);
+                
+                //print(sess.run(c));
+            }
+
+            //sess.close();
+
+        }
+        
+
+        //Chapter 5: Graphs
+
+
+        //chapter 4: Create Placeholders
+
+
+        //chapter 3: - Variables
 
         public static void CreateVariable()
         {
@@ -72,7 +118,7 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
 
 
      //
-     //chapter 2;
+     //chapter 2: Constants
         //Initialize a scalar constant:
         public static void CreateConstants()
         {

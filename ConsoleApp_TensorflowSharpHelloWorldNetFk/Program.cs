@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-
+using Tensorflow;
 using static Tensorflow.Binding;
 
 namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
@@ -12,11 +13,7 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
     class Program
     {
    
-
-
       //  public ExampleConfig Config { get; set; }
-
-
         static void Main(string[] args)
         {
 
@@ -24,13 +21,32 @@ namespace ConsoleApp_TensorflowSharpHelloWorldNetFk
             //LearnExamples.CreateTensors();
             //  LearnExamples.CreateConstants();
 
-            LearnExamples.CreateVariable();
+            // LearnExamples.CreateVariable();
             //  bool didRun = Run();
 
 
+            Console.WriteLine($"TensorFlow Binary v{tf.VERSION}");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"TensorFlow.NET v{Assembly.GetAssembly(typeof(TF_DataType)).GetName().Version}");
+            Console.WriteLine("System/App Info");
+            Console.WriteLine(Environment.OSVersion);
+            Console.WriteLine($"64Bit Operating System: {Environment.Is64BitOperatingSystem}");
+            Console.WriteLine($".NET CLR: {Environment.Version}");
+            Console.WriteLine(Environment.CurrentDirectory);
+            Console.ResetColor();
 
 
-           Console.WriteLine("End Here");
+
+            //LearnExamples.CreateVariable();
+
+            LearnExamples.CreateSession();
+
+
+
+
+
+
+            Console.WriteLine("End Here");
    
 
         }
