@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_TensorflowSharpH
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9AC282E-FAC0-4E4D-BD3F-ACAE67E64AFE}"
 	ProjectSection(SolutionItems) = preProject
+		LearningObjectives.md = LearningObjectives.md
 		README.md = README.md
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
